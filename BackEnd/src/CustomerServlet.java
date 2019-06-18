@@ -78,4 +78,72 @@ public class CustomerServlet extends HttpServlet {
         }
 
     }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id = req.getParameter("id");
+
+        if (id != null) {
+
+            try {
+                Connection connection = ds.getConnection();
+                PreparedStatement pstm = connection.prepareStatement("DELETE FROM Customer WHERE id=?");
+                pstm.setObject(1, id);
+                int affectedRows = pstm.executeUpdate();
+
+                if (affectedRows > 0) {
+                    resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                } else {
+                    resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                connection.close();
+            } catch (Exception ex) {
+                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                ex.printStackTrace();
+            }
+
+        } else {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        }
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getParameter("id") != null) {
+
+            try {
+                JsonReader reader = Json.createReader(req.getReader());
+                JsonObject customer = reader.readObject();
+
+                String id = customer.getString("id");
+                String name = customer.getString("name");
+                String address = customer.getString("address");
+
+                if (!id.equals(req.getParameter("id"))) {
+                    resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                    return;
+                }
+
+                Connection connection = ds.getConnection();
+                PreparedStatement pstm = connection.prepareStatement("UPDATE Customer SET name=?, address=? WHERE id=?");
+                pstm.setObject(3, id);
+                pstm.setObject(1, name);
+                pstm.setObject(2, address);
+                int affectedRows = pstm.executeUpdate();
+                if (affectedRows > 0) {
+                    resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                } else {
+                    resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                }
+                connection.close();
+            } catch (JsonParsingException | NullPointerException ex) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            } catch (Exception ex) {
+                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            }
+
+        } else {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        }
+    }
 }
