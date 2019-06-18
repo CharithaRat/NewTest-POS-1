@@ -1,7 +1,6 @@
 import javax.annotation.Resource;
-import javax.json.Json;
-import javax.json.JsonArrayBuilder;
-import javax.json.JsonObjectBuilder;
+import javax.json.*;
+import javax.json.stream.JsonParsingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -81,6 +80,116 @@ public class ItemServlet extends HttpServlet {
                 e.printStackTrace();
             }
 
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            JsonReader reader = Json.createReader(req.getReader());
+            JsonObject item = reader.readObject();
+
+            String code = item.getString("Code");
+            String description = item.getString("Description");
+//            double unitPrice = item.getInt("UnitPrice");
+//            double unit = BigDecimal.valueOf(item.getDouble("UnitPrice")).doubleValue();
+//            double qty = item.getInt("QtyOnHand");
+            double unitPrice = Double.parseDouble(item.getString("UnitPrice"));
+            double qty = Double.parseDouble(item.getString("QtyOnHand"));
+
+            Connection connection = ds.getConnection();
+            PreparedStatement stmt = connection.prepareStatement("INSERT INTO ITEM VALUES(?,?,?,?)");
+            stmt.setObject(1, code);
+            stmt.setObject(2, description);
+            stmt.setObject(3, unitPrice);
+            stmt.setObject(4, qty);
+            int affectedrows = stmt.executeUpdate();
+            System.out.println("Save Item");
+            if (affectedrows > 0) {
+                resp.setStatus(HttpServletResponse.SC_CREATED);
+            } else {
+                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            }
+            connection.close();
+        } catch (JsonParsingException | NullPointerException ex) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        } catch (Exception e) {
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String code = req.getParameter("Code");
+
+        if (code != null) {
+            try {
+                Connection connection = ds.getConnection();
+                PreparedStatement statement = connection.prepareStatement("DELETE FROM ITEM WHERE Code=?");
+                statement.setObject(1, code);
+                int affectedrows = statement.executeUpdate();
+                if (affectedrows > 0) {
+                    resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+                } else {
+                    resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+                }
+                connection.close();
+            } catch (Exception e) {
+                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            }
+        } else {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        }
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getParameter("Code") != null) {
+            try {
+
+                JsonReader reader = Json.createReader(req.getReader());
+                JsonObject jsonObject = reader.readObject();
+
+                String code = jsonObject.getString("Code");
+                String description = jsonObject.getString("Description");
+//                int price = jsonObject.getInt("UnitPrice");
+//                int qty = jsonObject.getInt("QtyOnHand");
+                double price = Double.parseDouble(jsonObject.getString("UnitPrice"));
+                double qty = Double.parseDouble(jsonObject.getString("QtyOnHand"));
+
+                if (!code.equals(req.getParameter("Code"))) {
+                    resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                    return;
+                }
+
+                Connection connection = ds.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement("UPDATE ITEM SET Description=?, UnitPrice=?, QtyOnHand=? WHERE Code=?");
+
+                preparedStatement.setObject(4, code);
+                preparedStatement.setObject(1, description);
+                preparedStatement.setObject(2, price);
+                preparedStatement.setObject(3, qty);
+
+                int affectrows = preparedStatement.executeUpdate();
+
+                if (affectrows > 0) {
+                    resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+//                    System.out.println("xxxx");
+                } else {
+                    resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+//                    System.out.println("yyyy");
+                }
+                connection.close();
+            } catch (JsonParsingException | NullPointerException ex) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            } catch (Exception e) {
+                resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+//                System.out.println("zzzz");
+                e.printStackTrace();
+            }
+        } else {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
         }
     }
 }

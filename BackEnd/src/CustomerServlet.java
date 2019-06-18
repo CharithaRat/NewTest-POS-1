@@ -22,29 +22,66 @@ public class CustomerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter out = resp.getWriter();
+        try (PrintWriter out = resp.getWriter()) {
 
-        try {
-            Connection connection = ds.getConnection();
-            Statement stm = connection.createStatement();
-            ResultSet rst = stm.executeQuery("SELECT * FROM Customer");
+            if (req.getParameter("id") != null) {
 
-            resp.setContentType("application/json");
-            JsonArrayBuilder ab = Json.createArrayBuilder();
+                String id = req.getParameter("id");
+                try {
+                    Connection connection = ds.getConnection();
+                    PreparedStatement pstm = connection.prepareStatement("SELECT * FROM Customer WHERE id=?");
+                    pstm.setObject(1, id);
+                    ResultSet rst = pstm.executeQuery();
 
-            while (rst.next()) {
-                JsonObjectBuilder ob = Json.createObjectBuilder();
-                ob.add("id", rst.getString("id"));
-                ob.add("name", rst.getString("name"));
-                ob.add("address", rst.getString("address"));
-                ab.add(ob.build());
+                    if (rst.next()) {
+                        System.out.println("Name: "+rst.getString(2));
+                        JsonObjectBuilder ob = Json.createObjectBuilder();
+                        ob.add("id", rst.getString(1));
+                        ob.add("name", rst.getString(2));
+                        ob.add("address", rst.getString(3));
+                        resp.setContentType("application/json");
+                        resp.setCharacterEncoding("UTF-8");
+
+                        System.out.println("Success@Get-Single");
+                        out.println(ob.build());
+                        out.flush();
+                        connection.close();
+                    } else {
+                        resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    }
+                    connection.close();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+            } else {
+                try {
+                    Connection connection = ds.getConnection();
+                    Statement stm = connection.createStatement();
+                    ResultSet rst = stm.executeQuery("SELECT * FROM Customer");
+
+                    resp.setContentType("application/json");
+                    resp.setCharacterEncoding("UTF-8");
+
+                    JsonArrayBuilder ab = Json.createArrayBuilder();
+
+                    while (rst.next()) {
+                        JsonObjectBuilder ob = Json.createObjectBuilder();
+                        ob.add("id", rst.getString("id"));
+                        ob.add("name", rst.getString("name"));
+                        ob.add("address", rst.getString("address"));
+                        ab.add(ob.build());
+                    }
+                    System.out.println("Success@Get-All");
+                    out.println(ab.build());
+//                    out.flush();
+                    connection.close();
+                } catch (Exception ex) {
+                    resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+                    ex.printStackTrace();
+                }
             }
-            out.println(ab.build().toString());
-//            System.out.println("doGet Executed");
-            connection.close();
-        } catch (Exception ex) {
-            resp.sendError(500, ex.getMessage());
-            ex.printStackTrace();
+
         }
     }
 
@@ -59,7 +96,7 @@ public class CustomerServlet extends HttpServlet {
             String address = customer.getString("address");
 
             Connection con = ds.getConnection();
-            PreparedStatement pstm = con.prepareStatement("INSERT INTO Customer1 VALUES (?,?,?)");
+            PreparedStatement pstm = con.prepareStatement("INSERT INTO Customer VALUES (?,?,?)");
             pstm.setObject(1,id);
             pstm.setObject(2,name);
             pstm.setObject(3,address);
