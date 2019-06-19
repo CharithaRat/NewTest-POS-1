@@ -33,8 +33,8 @@
       <file leaf-file-name="manage-customer.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="118" column="54" lean-forward="true" selection-start-line="118" selection-start-column="54" selection-end-line="118" selection-end-column="54" />
+            <state relative-caret-position="102">
+              <caret line="153" column="20" lean-forward="true" selection-start-line="153" selection-start-column="20" selection-end-line="153" selection-end-column="20" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" expanded="true" />
@@ -46,6 +46,15 @@
                 <element signature="e#5584#5591#1" expanded="true" />
                 <element signature="e#8160#8167#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manage-customer.component.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -77,11 +86,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/app.component.ts">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -95,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/service/customer.service.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -103,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage-customer.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="manage-customer.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="153">
+              <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -115,23 +119,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/dashboard/dashboard.component.html">
+      <file leaf-file-name="CorsFilter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CorsFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+            <state relative-caret-position="97">
+              <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
               <folding>
-                <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#2;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#2;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#2;n#section#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,7 +157,6 @@
         <option value="$PROJECT_DIR$/src/CustomerServlet.java" />
         <option value="$PROJECT_DIR$/web/META-INF/context.xml" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/index.html" />
-        <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.ts" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/dto/item.ts" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/dto/customer.ts" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/manage-item/manage-item.component.ts" />
@@ -172,8 +165,11 @@
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/manage-item/manage-item.component.html" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/../FrontEnd/src/app/service/customer.service.ts" />
+        <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.ts" />
+        <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.css" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.html" />
+        <option value="$PROJECT_DIR$/../FrontEnd/src/app/service/customer.service.ts" />
+        <option value="$PROJECT_DIR$/src/CorsFilter.java" />
       </list>
     </option>
   </component>
@@ -341,7 +337,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.20">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -483,12 +479,12 @@
       <option name="presentableId" value="Default" />
       <updated>1560807220636</updated>
       <workItem from="1560807226726" duration="2586000" />
-      <workItem from="1560869874901" duration="28030000" />
+      <workItem from="1560869874901" duration="30639000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30616000" />
+    <option name="totallyTimeSpent" value="33225000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -522,9 +518,9 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.329582" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.46623793" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.46623793" />
       <window_info anchor="bottom" id="Version Control" order="15" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.329582" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.329582" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22314675" />
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -720,13 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-order/manage-order.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-item/manage-item.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -752,20 +741,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/service/customer.service.ts">
+    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-order/manage-order.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="118" column="54" lean-forward="true" selection-start-line="118" selection-start-column="54" selection-end-line="118" selection-end-column="54" />
+        <state relative-caret-position="102">
+          <caret line="153" column="20" lean-forward="true" selection-start-line="153" selection-start-column="20" selection-end-line="153" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#section#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#section#1;n#!!top" expanded="true" />
@@ -780,12 +783,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.ts">
+    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/service/customer.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        <state relative-caret-position="170">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CorsFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

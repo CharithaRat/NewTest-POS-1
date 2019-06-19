@@ -12,6 +12,6 @@ export class CustomerService {
   }
 
   getAllCustomers():Observable<Customer[]>{
-   return this.http.get<Customer[]>("http://localhost:8080/pos");
+   return this.http.get<Customer[]>("http://localhost:8080/pos/customers");
   }
 }
