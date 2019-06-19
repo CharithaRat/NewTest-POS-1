@@ -16,6 +16,197 @@
   <!--------------------------
     | Your Page Content Here |
     -------------------------->
+  <!--=========================================================================-->
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+      <div class="card">
+        <h5 class="card-header">Search Item</h5>
+        <div class="card-body">
+          <form id="form1" data-parsley-validate="" novalidate="">
+            <div class="form-group row">
+              <!--<label for="inputEmail2" class="col-3 col-lg-2 col-form-label text-left">Name</label>-->
+              <div class="col-9 col-lg-12">
+                <input id="inputcid1" type="text" required="" data-parsley-type="code"
+                       placeholder="Item ID" class="form-control">
+              </div>
+            </div>
+            <div class="row pt-2 pt-sm-2 mt-6">
+              <div class="col-sm-6 pl-3">
+                <p class="text-left">
+                  <button type="submit" class="btn btn-space btn-primary"
+                          onclick="showItem(document.getElementById('inputcid1').value)">
+                    Search
+                  </button>
+                  <button class="btn btn-space btn-secondary"
+                          onclick="document.getElementById('inputcid1').value = ''">Cancel
+                  </button>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6" style="child-align: right">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-success"
+                onclick="document.getElementById('id01').style.display='block'" id="ibttnNew"
+                style="width:auto;">New Item
+        </button>
+        <button type="button" class="btn btn-primary" onclick="displayItem()" id="ibttnAll">All
+          Items
+        </button>
+        <button type="button" class="btn btn-secondary" id="ibttnEdit" data-toggle="modal"
+                data-target="#exampleModal">Edit
+        </button>
+        <button type="button" class="btn btn-danger" id="ibttnDelete">Delete</button>
+      </div>
+    </div>
+
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="card">
+        <h6 class="card-header">Customer Search Details in Here!</h6>
+        <div class="card-body">
+          <!--<p>Customer Search Details in Here!</p>-->
+          <form action="#" id="itemviewform" data-parsley-validate="">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="icode" style="text-align: left">Code:</label></td>
+                  <td>
+                    <div id="icode" style="text-align: left"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="idescription"
+                             style="text-align: left">Description:</label>
+                  </td>
+                  <td>
+                    <div id="idescription" style="text-align: left"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="iunitp" style="text-align: left">Unit Price:</label>
+                  </td>
+                  <td>
+                    <div id="iunitp" style="text-align: left"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="iqty" style="text-align: left">Qty On Hand:</label></td>
+                  <td>
+                    <div id="iqty" style="text-align: left"></div>
+                  </td>
+                </tr>
+              </table>
+
+
+            </div>
+
+          </form>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!-- ============================================================== -->
+    <!-- basic table -->
+    <!-- ============================================================== -->
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="card">
+        <h5 class="card-header">Basic Table</h5>
+        <div class="card-body">
+          <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+              <th scope="col">Code</th>
+              <th scope="col">Description</th>
+              <th scope="col">Unit Price</th>
+              <th scope="col">Qty On Hand</th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody id="tableData">
+            <tr *ngFor="let item of items">
+              <td>{{item.Code}}</td>
+              <td>{{item.Description}}</td>
+              <td>{{item.UnitPrice | number:'1.2-2'}}</td>
+              <td>{{item.QtyOnHand}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end basic table -->
+    <!-- ============================================================== -->
+  </div>
+
+  <!--Pop-Up Form for New Item start-->
+
+  <!-- ============================================================== -->
+  <!-- horizontal form -->
+  <!-- ============================================================== -->
+  <div id="id01" class="modal">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                          title="Close Modal">&times;</span>
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+      <div class="card">
+        <h5 class="card-header">Create Item</h5>
+        <form id="forms" data-parsley-validate="" novalidate="" class="modal-content">
+          <div class="form-group row">
+            <label for="code" class="col-3 col-lg-2 col-form-label text-right">Code</label>
+            <div class="col-9 col-lg-10">
+              <input id="code" type="text" required="" data-parsley-type="code"
+                     placeholder="Item ID" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="description"
+                   class="col-3 col-lg-2 col-form-label text-right">Description</label>
+            <div class="col-9 col-lg-10">
+              <input id="description" type="text" required="" placeholder="Item Description"
+                     class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="unitp" class="col-3 col-lg-2 col-form-label text-right">Unit
+              Price</label>
+            <div class="col-9 col-lg-10">
+              <input id="unitp" type="text" required="" data-parsley-type="unitp"
+                     placeholder="Unit Price" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="itqty" class="col-3 col-lg-2 col-form-label text-right">Qty On
+              Hand</label>
+            <div class="col-9 col-lg-10">
+              <input id="itqty" type="text" required="" data-parsley-type="qty"
+                     placeholder="Qty On hand" class="form-control">
+            </div>
+          </div>
+          <div class="row pt-2 pt-sm-5 mt-1">
+            <div class="col-sm-6 pl-0">
+              <p class="text-right">
+                <button type="submit" class="btn btn-space btn-primary"
+                        onclick="saveItemData()">Save
+                </button>
+                <button class="btn btn-space btn-secondary"
+                        onclick="document.getElementById('id01').style.display='none';document.getElementById('code').value = '';document.getElementById('description').value = '';document.getElementById('unitp').value = '';document.getElementById('qty').value = '';">
+                  Cancel
+                </button>
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--=========================================================================-->
 
 </section>
 <!-- /.content -->
