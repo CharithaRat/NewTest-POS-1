@@ -14,7 +14,17 @@ const routes:Routes =
     component:ManageCustomerComponent
   },
   {
-
+    path:'items',
+    component:ManageItemComponent
+  },
+  {
+    path:'dashboard',
+    component:DashboardComponent
+  },
+  {
+    path:'',
+    pathMatch:'full',
+    redirectTo:'dashboard'
   }
 ]
 @NgModule({
@@ -25,7 +35,7 @@ const routes:Routes =
     ManageItemComponent,
   ],
   imports: [
-    RouterModule,
+    RouterModule.forRoot(routes),
     BrowserModule
   ],
   providers: [],
