@@ -20,8 +20,8 @@
       <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="206" column="63" selection-start-line="206" selection-start-column="63" selection-end-line="206" selection-end-column="63" />
+            <state relative-caret-position="102">
+              <caret line="207" column="42" selection-start-line="207" selection-start-column="42" selection-end-line="207" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="e#9637#9643#0" expanded="true" />
@@ -30,8 +30,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage-customer.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="manage-customer.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="7" lean-forward="true" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manage-order.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-order/manage-order.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
@@ -39,11 +48,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/dto/customer.ts">
+      <file leaf-file-name="manage-item.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-item/manage-item.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="75" lean-forward="true" selection-start-line="2" selection-start-column="75" selection-end-line="2" selection-end-column="75" />
+            <state relative-caret-position="51">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../FrontEnd/src/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -52,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-item/manage-item.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="179">
-              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -68,11 +86,8 @@
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -81,28 +96,10 @@
         <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/dto/item.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/dashboard/dashboard.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="26" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -111,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/dashboard/dashboard.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#!!top" expanded="true" />
@@ -159,10 +156,12 @@
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/dto/item.ts" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/dto/customer.ts" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/manage-item/manage-item.component.ts" />
-        <option value="$PROJECT_DIR$/../FrontEnd/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/../FrontEnd/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/dashboard/dashboard.component.html" />
         <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.html" />
+        <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/manage-item/manage-item.component.html" />
+        <option value="$PROJECT_DIR$/../FrontEnd/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/../FrontEnd/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/../FrontEnd/src/app/view/manage-order/manage-order.component.html" />
       </list>
     </option>
   </component>
@@ -280,15 +279,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IJSE_TestPOS-1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="manage-item" type="462c0819:PsiDirectoryNode" />
+              <item name="manage-order" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IJSE_TestPOS-1" type="b2602c69:ProjectViewProjectNode" />
@@ -302,14 +293,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IJSE_TestPOS-1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -488,12 +471,12 @@
       <option name="presentableId" value="Default" />
       <updated>1560807220636</updated>
       <workItem from="1560807226726" duration="2586000" />
-      <workItem from="1560869874901" duration="23557000" />
+      <workItem from="1560869874901" duration="25538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26143000" />
+    <option name="totallyTimeSpent" value="28124000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -661,13 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../FrontEnd/src/assets/dist/img/user1-128x128.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -688,14 +664,14 @@
     <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/dto/customer.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="75" lean-forward="true" selection-start-line="2" selection-start-column="75" selection-end-line="2" selection-end-column="75" />
+          <caret line="2" column="75" selection-start-line="2" selection-start-column="75" selection-end-line="2" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-item/manage-item.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
@@ -705,31 +681,10 @@
     <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="35" column="4" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="206" column="63" selection-start-line="206" selection-start-column="63" selection-end-line="206" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#9637#9643#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/dashboard/dashboard.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#section#1;n#div#0;n#!!top" expanded="true" />
@@ -749,14 +704,53 @@
     <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-item/manage-item.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="207" column="42" selection-start-line="207" selection-start-column="42" selection-end-line="207" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#li#1;n#ul#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#9637#9643#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-customer/manage-customer.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="7" lean-forward="true" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FrontEnd/src/app/view/manage-order/manage-order.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />

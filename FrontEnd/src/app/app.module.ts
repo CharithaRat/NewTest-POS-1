@@ -6,6 +6,7 @@ import { DashboardComponent } from './view/dashboard/dashboard.component';
 import { ManageCustomerComponent } from './view/manage-customer/manage-customer.component';
 import { ManageItemComponent } from './view/manage-item/manage-item.component';
 import {Route, RouterModule, Routes} from "@angular/router";
+import { ManageOrderComponent } from './view/manage-order/manage-order.component';
 
 const routes:Routes =
 [
@@ -22,6 +23,10 @@ const routes:Routes =
     component:DashboardComponent
   },
   {
+    path:'orders',
+    component:ManageOrderComponent
+  },
+  {
     path:'',
     pathMatch:'full',
     redirectTo:'dashboard'
@@ -33,6 +38,7 @@ const routes:Routes =
     DashboardComponent,
     ManageCustomerComponent,
     ManageItemComponent,
+    ManageOrderComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
