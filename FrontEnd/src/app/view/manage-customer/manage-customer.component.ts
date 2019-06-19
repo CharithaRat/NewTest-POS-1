@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Customer} from "../../dto/customer";
 
 @Component({
   selector: 'app-manage-customer',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-customer.component.css']
 })
 export class ManageCustomerComponent implements OnInit {
+customers:Customer[]=[];
 
   constructor() { }
 
