@@ -7,6 +7,8 @@ import { ManageCustomerComponent } from './view/manage-customer/manage-customer.
 import { ManageItemComponent } from './view/manage-item/manage-item.component';
 import {Route, RouterModule, Routes} from "@angular/router";
 import { ManageOrderComponent } from './view/manage-order/manage-order.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 const routes:Routes =
 [
@@ -42,6 +44,8 @@ const routes:Routes =
   ],
   imports: [
     RouterModule.forRoot(routes),
+    HttpClientModule,
+    FormsModule,
     BrowserModule
   ],
   providers: [],

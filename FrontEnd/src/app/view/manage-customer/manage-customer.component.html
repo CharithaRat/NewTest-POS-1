@@ -5,7 +5,7 @@
     <small>Manage Customer Informations</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#" routerLink="dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
+    <li><a href="#" routerLink="/dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
     <li class="active">Customer</li>
   </ol>
 </section>
@@ -16,6 +16,221 @@
   <!--------------------------
     | Your Page Content Here |
     -------------------------->
+  <!--====================================================================-->
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+      <div class="card">
+        <h5 class="card-header">Search Customer</h5>
+        <div class="card-body">
+          <form id="form" data-parsley-validate="" novalidate="">
+            <div class="form-group row">
+              <!--<label for="inputEmail2" class="col-3 col-lg-2 col-form-label text-left">Name</label>-->
+              <div class="col-9 col-lg-12">
+                <input id="inputcid" type="text" required="" data-parsley-type="cid"
+                       placeholder="Customer ID" class="form-control">
+              </div>
+            </div>
+            <div class="row pt-2 pt-sm-2 mt-6">
+              <div class="col-sm-6 pl-3">
+                <p class="text-left">
+                  <!--<button type="submit" class="btn btn-space btn-primary"-->
+                  <!--onclick="showCustomer(document.getElementById('inputcid').value)">-->
+                  <button type="button" id="btnSearch" class="btn btn-space btn-primary">
+                    Search
+                  </button>
+                  <button class="btn btn-space btn-secondary"
+                          onclick="document.getElementById('inputcid').value = ''">Cancel
+                  </button>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6" style="child-align: right">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-success" data-target="#exampleModal1" id="bttnSave"
+                data-toggle="modal">New Customer
+        </button>
+        <button type="button" class="btn btn-primary" onclick="" id="btnAll">All Customers</button>
+        <button type="button" class="btn btn-secondary" id="bttnEdit" data-toggle="modal"
+                data-target="#exampleModal">Edit
+        </button>
+        <button type="button" class="btn btn-danger" id="btnDelete">Delete</button>
+      </div>
+    </div>
+
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="card">
+        <h6 class="card-header">Customer Search Details in Here!</h6>
+        <div class="card-body">
+          <!--<p>Customer Search Details in Here!</p>-->
+          <!---->
+          <form action="#" id="cusviewform" data-parsley-validate="">
+            <div class="form-group">
+              <table>
+                <tr>
+                  <td><label for="idn" style="text-align: left">ID:</label></td>
+                  <td>
+                    <div id="idn" style="text-align: left"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="name" style="text-align: left">Name:</label></td>
+                  <td>
+                    <div id="name" style="text-align: left"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label for="address" style="text-align: left">Address:</label></td>
+                  <td>
+                    <div id="address" style="text-align: left"></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </form>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!-- ============================================================== -->
+    <!-- basic table -->
+    <!-- ============================================================== -->
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+      <div class="card">
+        <h5 class="card-header">Customer Informations</h5>
+        <div class="card-body">
+          <table class="table table-hover table-active" id="tabCustomers">
+            <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Address</th>
+            </tr>
+            </thead>
+              <tr *ngFor="let customer of customers">
+                <td>{{customer.id | uppercase}}</td>
+                <td>{{customer.name | titlecase}}</td>
+                <td>{{customer.address}}</td>
+              </tr>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end basic table -->
+    <!-- ============================================================== -->
+  </div>
+  <!-- ============================================================== -->
+  <!--Pop-Up Form for New Customer start-AJAX//New Modal Start-->
+  <!-- ============================================================== -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+       aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">Create Customer</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="formedit1" data-parsley-validate="" novalidate="" class="modal-content">
+            <div class="form-group row">
+              <label for="cidedit1"
+                     class="col-3 col-lg-2 col-form-label text-right">ID</label>
+              <div class="col-9 col-lg-10">
+                <input id="cidedit1" type="text" required="" data-parsley-type="cid"
+                       placeholder="Customer ID" class="form-control">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="cnameedit1"
+                     class="col-3 col-lg-2 col-form-label text-right">Name</label>
+              <div class="col-9 col-lg-10">
+                <input id="cnameedit1" type="text" required="" placeholder="Customer Name"
+                       class="form-control">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="caddressedit1" class="col-3 col-lg-2 col-form-label text-right">Address</label>
+              <div class="col-9 col-lg-10">
+                <input id="caddressedit1" type="text" required=""
+                       data-parsley-type="caddress"
+                       placeholder="Customer Address" class="form-control">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btnSave">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ============================================================== -->
+  <!--Pop-Up Form for New Customer start-AJAX//New Modal End-->
+  <!-- ============================================================== -->
+
+  <!--Pop-Up Form for New Customer end-->
+
+  <!-- ============================================================== -->
+  <!--Start customer data edit form-->
+  <!-- ============================================================== -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Customer Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="formedit" data-parsley-validate="" novalidate="" class="modal-content">
+            <div class="form-group row">
+              <label for="cidedit" class="col-3 col-lg-2 col-form-label text-right">ID</label>
+              <div class="col-9 col-lg-10">
+                <input id="cidedit" type="text" required="" data-parsley-type="cid"
+                       placeholder="Customer ID" class="form-control">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="cnameedit" class="col-3 col-lg-2 col-form-label text-right">Name</label>
+              <div class="col-9 col-lg-10">
+                <input id="cnameedit" type="text" required="" placeholder="Customer Name"
+                       class="form-control">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="caddressedit"
+                     class="col-3 col-lg-2 col-form-label text-right">Address</label>
+              <div class="col-9 col-lg-10">
+                <input id="caddressedit" type="text" required="" data-parsley-type="caddress"
+                       placeholder="Customer Address" class="form-control">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btnedit">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--====================================================================-->
 
 </section>
 <!-- /.content -->
