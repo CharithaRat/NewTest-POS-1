@@ -19,32 +19,36 @@
   <!--=========================================================================-->
   <div class="row">
     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-      <div class="card">
-        <h5 class="card-header">Search Item</h5>
-        <div class="card-body">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Search Item</h3>
+        </div>
+        <div class="box-body">
           <form id="form1" data-parsley-validate="" novalidate="">
-            <div class="form-group row">
+            <div class="form-group">
               <!--<label for="inputEmail2" class="col-3 col-lg-2 col-form-label text-left">Name</label>-->
               <div class="col-9 col-lg-12">
                 <input id="inputcid1" type="text" required="" data-parsley-type="code"
                        placeholder="Item ID" class="form-control">
               </div>
             </div>
-            <div class="row pt-2 pt-sm-2 mt-6">
-              <div class="col-sm-6 pl-3">
-                <p class="text-left">
-                  <button type="submit" class="btn btn-space btn-primary"
-                          onclick="showItem(document.getElementById('inputcid1').value)">
-                    Search
-                  </button>
-                  <button class="btn btn-space btn-secondary"
-                          onclick="document.getElementById('inputcid1').value = ''">Cancel
-                  </button>
-                </p>
-              </div>
-            </div>
           </form>
         </div>
+        <div class="row pt-2 pt-sm-2 mt-6">
+          <div class="col-sm-6 pl-3">
+            <div class="box-footer">
+              <button type="submit" class="btn btn-space btn-primary"
+                      onclick="showItem(document.getElementById('inputcid1').value)">
+                Search
+              </button>
+              &nbsp;
+              <button class="btn btn-space btn-secondary"
+                      onclick="document.getElementById('inputcid1').value = ''">Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -65,45 +69,46 @@
     </div>
 
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-      <div class="card">
-        <h6 class="card-header">Customer Search Details in Here!</h6>
-        <div class="card-body">
+      <div class="box box-success">
+        <div class="box-header with-border">
+          <h3 class="box-title">Customer Search Details in Here!</h3>
+        </div>
+        <div class="box-body">
           <!--<p>Customer Search Details in Here!</p>-->
           <form action="#" id="itemviewform" data-parsley-validate="">
             <div class="form-group">
               <table>
                 <tr>
-                  <td><label for="icode" style="text-align: left">Code:</label></td>
+                  <td><label for="icode" style="text-align: left">Code:</label>&nbsp;
+                  </td>
                   <td>
                     <div id="icode" style="text-align: left"></div>
                   </td>
                 </tr>
                 <tr>
                   <td><label for="idescription"
-                             style="text-align: left">Description:</label>
+                             style="text-align: left">Description:</label>&nbsp;
                   </td>
                   <td>
                     <div id="idescription" style="text-align: left"></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><label for="iunitp" style="text-align: left">Unit Price:</label>
+                  <td><label for="iunitp" style="text-align: left">Unit Price:</label>&nbsp;
                   </td>
                   <td>
                     <div id="iunitp" style="text-align: left"></div>
                   </td>
                 </tr>
                 <tr>
-                  <td><label for="iqty" style="text-align: left">Qty On Hand:</label></td>
+                  <td><label for="iqty" style="text-align: left">Qty On Hand:</label>&nbsp;
+                  </td>
                   <td>
                     <div id="iqty" style="text-align: left"></div>
                   </td>
                 </tr>
               </table>
-
-
             </div>
-
           </form>
           <!---->
         </div>
@@ -115,9 +120,11 @@
     <!-- basic table -->
     <!-- ============================================================== -->
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-      <div class="card">
-        <h5 class="card-header">Basic Table</h5>
-        <div class="card-body">
+      <div class="box">
+        <div class="box-header">
+          <h5 class="box-title">Item Information</h5>
+        </div>
+        <div class="box-body">
           <table class="table table-bordered table-hover">
             <thead>
             <tr>
@@ -125,7 +132,6 @@
               <th scope="col">Description</th>
               <th scope="col">Unit Price</th>
               <th scope="col">Qty On Hand</th>
-              <th scope="col"></th>
             </tr>
             </thead>
             <tbody id="tableData">
