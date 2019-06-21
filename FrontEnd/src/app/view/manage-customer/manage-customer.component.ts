@@ -16,7 +16,7 @@ export class ManageCustomerComponent implements OnInit {
   txtId: ElementRef;
   frmCustomers: NgForm;
 
-  // @ViewChild('txtid') txtId: ElementRef;
+  // @ViewChild('txtd') txtId: ElementRef;
   // @ViewChild ('frmCustomer') frmCustomers: NgForm;
 
 
@@ -60,6 +60,24 @@ export class ManageCustomerComponent implements OnInit {
 
     } else {
       alert('Invalid Data, Please Correct...!');
+    }
+  }
+  deleteCustomer(): void {
+    if (confirm('Are you sure you want to delete this thing from the database?')) {
+      // Delete it!
+      this.customerService.deleteCustomer(this.selectedCustomer.id).subscribe(resp => {
+        if (resp) {
+          alert('Customer was deleted');
+          this.customers.splice(this.customers.indexOf(this.selectedCustomer), 1);
+        //  this will not work
+        //  after delete execution => goes options request & it has 204 response status
+        } else {
+          alert('Failed to delete');
+        //  Why this appears after correct deletion
+        }
+      });
+    } else {
+      // Do nothing!
     }
   }
 

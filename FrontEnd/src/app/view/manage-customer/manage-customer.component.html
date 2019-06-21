@@ -49,14 +49,14 @@
 
     <div class="col-12 col-sm-12 col-md-6 col-lg-6" style="child-align: right">
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-success" data-target="#addCustomerModal" id="bttnSave"
+        <button type="reset" class="btn btn-success" data-target="#addCustomerModal" id="bttnSave"
                 data-toggle="modal">New Customer
         </button>
         <button type="button" class="btn btn-primary" onclick="" id="btnAll">All Customers</button>
         <button type="button" class="btn btn-secondary" id="bttnEdit" data-toggle="modal"
                 data-target="#editCustomerModal">Edit
         </button>
-        <button type="button" class="btn btn-danger" id="btnDelete">Delete</button>
+        <button type="button" class="btn btn-danger" id="btnDelete" (click)="deleteCustomer()">Delete</button>
       </div>
     </div>
 
@@ -75,21 +75,21 @@
                   <td><label for="idn" style="text-align: left">ID:</label>&nbsp;</td>
                   <td>
                     <!--<div id="idn" style="text-align: left">{{scustomer.id}}</div>-->
-                    <input type="text" id="idn" style="text-align: left" class="form-control" [value]="sCustomer?.id">
+                    <input type="text" id="idn" style="text-align: left;width: 300px" class="form-control" placeholder="Customer Id" [value]="sCustomer?.id" disabled>
                   </td>
                 </tr>
                 <tr>
                   <td><label for="name" style="text-align: left">Name:</label>&nbsp;</td>
                   <td>
                     <!--<div id="name" style="text-align: left">{{scustomer.name}}</div>-->
-                    <input type="text" id="name" style="text-align: left" class="form-control" [value]="sCustomer?.name">
+                    <input type="text" id="name" style="text-align: left" class="form-control" placeholder="Customer Name" [value]="sCustomer?.name" disabled>
                   </td>
                 </tr>
                 <tr>
                   <td><label for="address" style="text-align: left">Address:</label>&nbsp;</td>
                   <td>
                     <!--<div id="address" style="text-align: left">{{scustomer.address}}</div>-->
-                    <input type="text" id="address" style="text-align: left" class="form-control" [value]="sCustomer?.address">
+                    <input type="text" id="address" style="text-align: left" class="form-control" placeholder="Customer Address" [value]="sCustomer?.address" disabled>
                   </td>
                 </tr>
               </table>
@@ -151,7 +151,7 @@
               <label for="cidedit1"
                      class="col-3 col-lg-2 col-form-label text-right">ID</label>
               <div class="col-9 col-lg-10">
-                <input name="txtid" [(ngModel)]="selectedCustomer.id" id="cidedit1" type="text" required="" data-parsley-type="cid"
+                <input name="txtid" [(ngModel)]="selectedCustomer.id" id="cidedit1" type="text" data-parsley-type="cid"
                        placeholder="Customer ID" class="form-control" required pattern="^C\d{3}$">
               </div>
             </div>
@@ -166,7 +166,7 @@
             <div class="form-group row">
               <label for="caddressedit1" class="col-3 col-lg-2 col-form-label text-right">Address</label>
               <div class="col-9 col-lg-10">
-                <input name="txtAddress" [(ngModel)]="selectedCustomer.address" id="caddressedit1" type="text" required=""
+                <input name="txtAddress" [(ngModel)]="selectedCustomer.address" id="caddressedit1" type="text"
                        data-parsley-type="caddress"
                        placeholder="Customer Address" class="form-control" required pattern="\w{4}.+">
               </div>
@@ -202,34 +202,34 @@
           <h4 class="modal-title">Edit Customer Details</h4>
         </div>
         <div class="modal-body">
-          <form id="formedit" data-parsley-validate="" novalidate="" class="modal-content">
+          <form (ngSubmit)="editCustomer(CID)" id="formedit" data-parsley-validate="" novalidate="" class="modal-content">
             <div class="form-group row">
               <label for="cidedit" class="col-3 col-lg-2 col-form-label text-right">ID</label>
               <div class="col-9 col-lg-10">
-                <input id="cidedit" type="text" required="" data-parsley-type="cid"
-                       placeholder="Customer ID" class="form-control">
+                <input #CID type="text" [(ngModel)]="selectedCustomer.id"  name="sid" data-parsley-type="cid"
+                       placeholder="Customer ID" class="form-control" id="cidedit" required pattern="^C\d{3}$">
               </div>
             </div>
             <div class="form-group row">
               <label for="cnameedit" class="col-3 col-lg-2 col-form-label text-right">Name</label>
               <div class="col-9 col-lg-10">
-                <input id="cnameedit" type="text" required="" placeholder="Customer Name"
-                       class="form-control">
+                <input type="text" [(ngModel)]="selectedCustomer.name" name="sname" placeholder="Customer Name"
+                       class="form-control" id="cnameedit"  required pattern="\w{4}.+">
               </div>
             </div>
             <div class="form-group row">
               <label for="caddressedit"
                      class="col-3 col-lg-2 col-form-label text-right">Address</label>
               <div class="col-9 col-lg-10">
-                <input id="caddressedit" type="text" required="" data-parsley-type="caddress"
-                       placeholder="Customer Address" class="form-control">
+                <input  type="text" [(ngModel)]="selectedCustomer.address" name="saddress" data-parsley-type="caddress"
+                       placeholder="Customer Address" class="form-control" id="caddressedit" required pattern="\w{4}.+">
               </div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </div>
       <!-- /.modal-content -->
