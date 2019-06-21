@@ -16,6 +16,210 @@
   <!--------------------------
     | Your Page Content Here |
     -------------------------->
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+      <!--<div class="row">-->
+      <!--<div class="col-12 col-sm-12 col-md-6 cpl-lg-6">-->
+      <!--Customer Details-->
+      <div class="card">
+        <h6 class="card-header">Customer Details</h6>
+        <div class="card-body">
+          <form>
+            <fieldset>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-12 col-sm-6 col-md-6">
+                    <select id="sCustomer" class="form-control"></select>
+                    <!--Normal => class="form-control"-->
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-6">
+                    <button type="button" class="btn btn-success" id="addCustomer">Add
+                      New
+                      Customer
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="ordname">Name</label>
+                <input type="text" class="form-control" id="ordname" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label for="ordaddress">Address</label>
+                <input type="text" class="form-control" id="ordaddress"
+                       placeholder="Address">
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!--</div>-->
+      <!--</div>-->
+      <!--<div class="row">-->
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+        <!--Invoice Details-->
+        <div class="card">
+          <h6 class="card-header">Customer Details</h6>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <label>Date</label>
+                <!--Note All functions are accessed via the data attribute e.g. $('#datetimepicker').data("DateTimePicker").FUNCTION()-->
+                <div class="container">
+                  <div class="row">
+                    <div class='col-sm-6'>
+                      <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1'>
+                          <input type='text' class="form-control"/>
+                          <span class="input-group-addon">
+                                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                            </span>
+                        </div>
+                      </div>
+                    </div>
+                    <script type="text/javascript">
+                      $(function () {
+                        $('#datetimepicker1').datetimepicker();
+                      });
+                    </script>
+                  </div>
+                </div>
+                <!--Date Picker-->
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                <label for="oid">OID</label>
+                <input type="text" class="form-control" id="oid">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--</div>-->
+    </div>
 
+
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+      <!--Item Select-->
+      <div class="card">
+        <h6 class="card-header">Item Details</h6>
+        <div class="card-body">
+          <form>
+            <fieldset>
+              <div class="form-group">
+                <!--<select id="sItem" class="selectpicker" data-live-search="true"></select>-->
+                <!--Need to check search & loading to above-->
+                <select id="sItem" class="selectpicker"></select>
+              </div>
+              <div class="form-group">
+                <label for="uprice">Unit Price</label>
+                <input type="text" class="form-control" id="uprice"
+                       placeholder="Unit Price">
+              </div>
+              <div class="form-group">
+                <label for="qty">Qty On Hand</label>
+                <input type="text" class="form-control" id="qty"
+                       placeholder="Quantity Available">
+              </div>
+
+            </fieldset>
+          </form>
+          <hr>
+          <h6>Order Item</h6>
+          <hr>
+          <form>
+            <div class="form-group">
+              <label for="ordqty">Order Quantity</label>
+              <input type="text" class="form-control" id="ordqty"
+                     placeholder="Order Quantity">
+            </div>
+            <button type="button" class="btn btn-primary" id="addOrd">Add Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--</div>-->
+  <div class="row">
+    <!--Table goes in here-->
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+              <td>Name</td>
+              <td>Price</td>
+              <td>Quantity</td>
+              <td>Amount</td>
+            </tr>
+            </thead>
+            <tbody id="odlist">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!--Total Billing-->
+    <div class="container">
+      <div class="card">
+        <!--<h6 class="card-header">Item Details</h6>-->
+        <div class="card-body">
+          <div class="row">
+            <div class="form-group">
+              <label>Total:</label>
+              <label>X</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="validationDefault03">Cash:</label>
+              <input type="text" class="form-control" id="validationDefault03"
+                     placeholder="City"
+                     required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault04">Balance:</label>
+              <input type="text" class="form-control" id="validationDefault04"
+                     placeholder="State"
+                     required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault05">Discount:</label>
+              <input type="text" class="form-control" id="validationDefault05"
+                     placeholder="Zip"
+                     required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!--Buttons for control-->
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6" style="child-align: left">
+        <select class="selectpicker">
+          <option>Mustard</option>
+          <option>Ketchup</option>
+          <option>Relish</option>
+        </select>
+        <select class="selectpicker" data-live-search="true">
+          <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+          <option data-tokens="mustard">Burger, Shake and a Smile</option>
+          <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+        </select>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6" style="child-align: right">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-danger">Clear</button>
+          <button type="button" class="btn btn-secondary">Renew Order</button>
+          <button type="button" class="btn btn-success">Submit Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- /.content -->

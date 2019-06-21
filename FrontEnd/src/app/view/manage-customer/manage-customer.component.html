@@ -28,8 +28,7 @@
             <div class="form-group">
               <!--<label for="inputEmail2" class="col-3 col-lg-2 col-form-label text-left">Name</label>-->
               <div class="col-9 col-lg-12">
-                <input #txtId id="inputcid" type="text" required="" data-parsley-type="cid"
-                       placeholder="Customer ID" class="form-control">
+                <input type="text" #txtID name="inpId" placeholder="Customer ID" class="form-control">
               </div>
             </div>
           </form>
@@ -37,12 +36,9 @@
         <div class="row pt-2 pt-sm-2 mt-6">
           <div class="col-sm-6 pl-3">
             <div class="box-footer">
-              <button type="button" id="btnSearch" class="btn btn-space btn-primary">
-                Search
-              </button>
+              <button type="button" id="btnSearch" class="btn btn-space btn-primary" (click)="getID(txtID)">Search</button>
               &nbsp;
-              <button class="btn btn-space btn-secondary"
-                      onclick="document.getElementById('inputcid').value = ''">Cancel
+              <button class="btn btn-space btn-secondary" (cancel)="newCustomer()">Cancel
               </button>
             </div>
           </div>
@@ -78,19 +74,22 @@
                 <tr>
                   <td><label for="idn" style="text-align: left">ID:</label>&nbsp;</td>
                   <td>
-                    <div id="idn" style="text-align: left"></div>
+                    <!--<div id="idn" style="text-align: left">{{scustomer.id}}</div>-->
+                    <input type="text" id="idn" style="text-align: left" class="form-control" [value]="sCustomer?.id">
                   </td>
                 </tr>
                 <tr>
                   <td><label for="name" style="text-align: left">Name:</label>&nbsp;</td>
                   <td>
-                    <div id="name" style="text-align: left"></div>
+                    <!--<div id="name" style="text-align: left">{{scustomer.name}}</div>-->
+                    <input type="text" id="name" style="text-align: left" class="form-control" [value]="sCustomer?.name">
                   </td>
                 </tr>
                 <tr>
                   <td><label for="address" style="text-align: left">Address:</label>&nbsp;</td>
                   <td>
-                    <div id="address" style="text-align: left"></div>
+                    <!--<div id="address" style="text-align: left">{{scustomer.address}}</div>-->
+                    <input type="text" id="address" style="text-align: left" class="form-control" [value]="sCustomer?.address">
                   </td>
                 </tr>
               </table>
@@ -111,7 +110,7 @@
           <h5 class="box-title">Customer Informations</h5>
         </div>
         <div class="box-body">
-          <table class="table table-bordered table-hover" id="tabCustomers" (click)="slectedCustomer">
+          <table class="table table-bordered table-hover" id="tabCustomers">
             <thead>
             <tr>
               <th scope="col">Id</th>
@@ -120,7 +119,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let customer of customers">
+            <tr *ngFor="let customer of customers" (click)="tableRow_Click(customer)">
               <td>{{customer.id | uppercase}}</td>
               <td>{{customer.name}}</td>
               <td>{{customer.address}}</td>
@@ -147,36 +146,36 @@
           <h4 class="modal-title">Create Customer</h4>
         </div>
         <div class="modal-body">
-          <form id="formedit1" data-parsley-validate="" novalidate="" class="modal-content">
+          <form (ngSubmit)="save()" #frmCustomer="ngForm" class="modal-content">
             <div class="form-group row">
               <label for="cidedit1"
                      class="col-3 col-lg-2 col-form-label text-right">ID</label>
               <div class="col-9 col-lg-10">
-                <input id="cidedit1" type="text" required="" data-parsley-type="cid"
-                       placeholder="Customer ID" class="form-control">
+                <input name="txtid" [(ngModel)]="selectedCustomer.id" id="cidedit1" type="text" required="" data-parsley-type="cid"
+                       placeholder="Customer ID" class="form-control" required pattern="^C\d{3}$">
               </div>
             </div>
             <div class="form-group row">
               <label for="cnameedit1"
                      class="col-3 col-lg-2 col-form-label text-right">Name</label>
               <div class="col-9 col-lg-10">
-                <input id="cnameedit1" type="text" required="" placeholder="Customer Name"
-                       class="form-control">
+                <input name="txtName" [(ngModel)]="selectedCustomer.name" id="cnameedit1" type="text" minlength="4" placeholder="Customer Name"
+                       class="form-control" required pattern="\w{4}.+">
               </div>
             </div>
             <div class="form-group row">
               <label for="caddressedit1" class="col-3 col-lg-2 col-form-label text-right">Address</label>
               <div class="col-9 col-lg-10">
-                <input id="caddressedit1" type="text" required=""
+                <input name="txtAddress" [(ngModel)]="selectedCustomer.address" id="caddressedit1" type="text" required=""
                        data-parsley-type="caddress"
-                       placeholder="Customer Address" class="form-control">
+                       placeholder="Customer Address" class="form-control" required pattern="\w{4}.+">
               </div>
             </div>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </div>
       <!-- /.modal-content -->
