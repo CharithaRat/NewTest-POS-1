@@ -30,7 +30,7 @@ public class orderServlet extends HttpServlet {
                 String oid = req.getParameter("OID");
                 try {
                     Connection connection = ds.getConnection();
-                    PreparedStatement pstm = connection.prepareStatement("SELECT * FROM order WHERE OID=?");
+                    PreparedStatement pstm = connection.prepareStatement("SELECT * FROM orders WHERE OID=?");
                     pstm.setObject(1, oid);
                     ResultSet rst = pstm.executeQuery();
 
@@ -42,7 +42,9 @@ public class orderServlet extends HttpServlet {
                         ob.add("unitPrice", rst.getDouble(4));
                         ob.add("qty", rst.getDouble(5));
                         ob.add("amount", rst.getDouble(6));
+
                         resp.setContentType("application/json");
+                        resp.setCharacterEncoding("UTF-8");
 
                         System.out.println("Success@Get-Single");
                         out.println(ob.build());
@@ -57,7 +59,7 @@ public class orderServlet extends HttpServlet {
                 try {
                     Connection con = ds.getConnection();
                     Statement stm = con.createStatement();
-                    ResultSet rst = stm.executeQuery("SELECT * FROM order");
+                    ResultSet rst = stm.executeQuery("SELECT * FROM orders");
 
                     resp.setContentType("application/json");
                     resp.setCharacterEncoding("UTF-8");
@@ -101,7 +103,7 @@ public class orderServlet extends HttpServlet {
             double unamount = Double.parseDouble(order.getString("amount"));
 
             Connection con = ds.getConnection();
-            PreparedStatement pstm = con.prepareStatement("INSERT INTO order VALUES (?,?,?,?,?,?)");
+            PreparedStatement pstm = con.prepareStatement("INSERT INTO orders VALUES (?,?,?,?,?,?)");
             pstm.setObject(1, oid);
             pstm.setObject(2, odate);
             pstm.setObject(3, item);
@@ -131,7 +133,7 @@ public class orderServlet extends HttpServlet {
 
             try {
                 Connection connection = ds.getConnection();
-                PreparedStatement pstm = connection.prepareStatement("DELETE FROM order WHERE OID=?");
+                PreparedStatement pstm = connection.prepareStatement("DELETE FROM orders WHERE OID=?");
                 pstm.setObject(1, oid);
                 int affectedRows = pstm.executeUpdate();
 
@@ -173,7 +175,7 @@ public class orderServlet extends HttpServlet {
                 }
 
                 Connection connection = ds.getConnection();
-                PreparedStatement pstm = connection.prepareStatement("UPDATE order SET ordDate=?, itemName=?, unitPrice=?, qty=?, amount=? WHERE id=?");
+                PreparedStatement pstm = connection.prepareStatement("UPDATE orders SET ordDate=?, itemName=?, unitPrice=?, qty=?, amount=? WHERE id=?");
 
                 pstm.setObject(1, odate1);
                 pstm.setObject(2, item);

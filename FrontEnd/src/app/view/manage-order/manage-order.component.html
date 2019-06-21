@@ -31,16 +31,9 @@
               <div class="form-group">
                 <div class="row">
                   <div class="col-12 col-sm-6 col-md-6">
-                    <!--<select id="sCustomer" class="form-control"></select>-->
-                    <!--Normal => class="form-control"-->
                     <select class="form-control select2" style="width: 100%;">
-                      <option selected="selected">Alabama</option>
-                      <option>Alaska</option>
-                      <!--<option>California</option>-->
-                      <!--<option>Delaware</option>-->
-                      <!--<option>Tennessee</option>-->
-                      <!--<option>Texas</option>-->
-                      <!--<option>Washington</option>-->
+                      <option selected="selected">-Select-</option>
+                      <option *ngFor="let customer of customers">{{customer.name}}</option>
                     </select>
                   </div>
                   <div class="col-12 col-sm-6 col-md-6">
@@ -126,9 +119,10 @@
           <form>
             <fieldset>
               <div class="form-group">
-                <!--<select id="sItem" class="selectpicker" data-live-search="true"></select>-->
-                <!--Need to check search & loading to above-->
-                <select id="sItem" class="selectpicker"></select>
+                <select class="form-control select2" style="width: 100%;">
+                  <option selected="selected">-Select-</option>
+                  <option *ngFor="let item of items">{{item.Description}}</option>
+                </select>
               </div>
               <div class="form-group">
                 <label for="uprice">Unit Price</label>
@@ -167,6 +161,7 @@
           <table class="table table-bordered table-hover">
             <thead>
             <tr>
+              <td>OID</td>
               <td>Name</td>
               <td>Price</td>
               <td>Quantity</td>
@@ -174,7 +169,13 @@
             </tr>
             </thead>
             <tbody id="odlist">
-
+            <tr *ngFor="let order of orders">
+              <td>{{order.OID}}</td>
+              <td>{{order.itemName}}</td>
+              <td>{{order.unitPrice | number:'1.2-2'}}</td>
+              <td>{{order.qty | number:'1.2-2'}}</td>
+              <td>{{order.amount | number:'1.2-2'}}</td>
+            </tr>
             </tbody>
           </table>
         </div>
