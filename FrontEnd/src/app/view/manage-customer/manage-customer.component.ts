@@ -13,11 +13,11 @@ export class ManageCustomerComponent implements OnInit {
   sCustomer: Customer = new Customer('', '', '');
   cid: string;
   selectedCustomer: Customer = new Customer('', '', '');
-  // txtId: ElementRef;
-  // frmCustomers: NgForm;
+  txtId: ElementRef;
+  frmCustomers: NgForm;
 
-  @ViewChild('txtid') txtId: ElementRef;
-  @ViewChild ('frmCustomer') frmCustomers: NgForm;
+  // @ViewChild('txtid') txtId: ElementRef;
+  // @ViewChild ('frmCustomer') frmCustomers: NgForm;
 
 
   constructor(private customerService: CustomerService) {

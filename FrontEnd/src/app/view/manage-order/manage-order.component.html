@@ -21,21 +21,31 @@
       <!--<div class="row">-->
       <!--<div class="col-12 col-sm-12 col-md-6 cpl-lg-6">-->
       <!--Customer Details-->
-      <div class="card">
-        <h6 class="card-header">Customer Details</h6>
-        <div class="card-body">
+      <div class="box">
+        <div class="box-header">
+        <h6 class="box-title">Customer Details</h6>
+        </div>
+        <div class="box-body">
           <form>
             <fieldset>
               <div class="form-group">
                 <div class="row">
                   <div class="col-12 col-sm-6 col-md-6">
-                    <select id="sCustomer" class="form-control"></select>
+                    <!--<select id="sCustomer" class="form-control"></select>-->
                     <!--Normal => class="form-control"-->
+                    <select class="form-control select2" style="width: 100%;">
+                      <option selected="selected">Alabama</option>
+                      <option>Alaska</option>
+                      <!--<option>California</option>-->
+                      <!--<option>Delaware</option>-->
+                      <!--<option>Tennessee</option>-->
+                      <!--<option>Texas</option>-->
+                      <!--<option>Washington</option>-->
+                    </select>
                   </div>
                   <div class="col-12 col-sm-6 col-md-6">
-                    <button type="button" class="btn btn-success" id="addCustomer">Add
-                      New
-                      Customer
+                    <button type="button" class="btn btn-success" id="addCustomer">
+                      Add New Customer
                     </button>
                   </div>
                 </div>
@@ -56,15 +66,16 @@
       <!--</div>-->
       <!--</div>-->
       <!--<div class="row">-->
-      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
         <!--Invoice Details-->
-        <div class="card">
-          <h6 class="card-header">Customer Details</h6>
-          <div class="card-body">
+        <div class="box">
+          <div class="box-header">
+          <h6 class="box-title">Customer Details</h6>
+          </div>
+          <div class="box-body">
             <div class="row">
               <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                 <label>Date</label>
-                <!--Note All functions are accessed via the data attribute e.g. $('#datetimepicker').data("DateTimePicker").FUNCTION()-->
+                <!--Note All functions are accessed via the data attribute e.g. $('#datetimepicker').data("DateTimePicker").FUNCTION()
                 <div class="container">
                   <div class="row">
                     <div class='col-sm-6'>
@@ -84,7 +95,14 @@
                     </script>
                   </div>
                 </div>
-                <!--Date Picker-->
+                Date Picker-->
+                <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="datepicker">
+                </div>
+                <!-- /.input group -->
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                 <label for="oid">OID</label>
@@ -93,16 +111,18 @@
             </div>
           </div>
         </div>
-      </div>
+
       <!--</div>-->
     </div>
 
 
     <div class="col-12 col-sm-12 col-md-6 col-lg-6">
       <!--Item Select-->
-      <div class="card">
-        <h6 class="card-header">Item Details</h6>
-        <div class="card-body">
+      <div class="box">
+        <div class="box-header">
+        <h6 class="box-title">Item Details</h6>
+        </div>
+        <div class="box-body">
           <form>
             <fieldset>
               <div class="form-group">
@@ -141,9 +161,9 @@
   <!--</div>-->
   <div class="row">
     <!--Table goes in here-->
-    <div class="container">
-      <div class="card">
-        <div class="card-body">
+    <div class="container" style="width: 1000px">
+      <div class="box">
+        <div class="box-body">
           <table class="table table-bordered table-hover">
             <thead>
             <tr>
@@ -164,12 +184,12 @@
 
   <div class="row">
     <!--Total Billing-->
-    <div class="container">
-      <div class="card">
+    <div class="container" style="width: 1000px">
+      <div class="box">
         <!--<h6 class="card-header">Item Details</h6>-->
-        <div class="card-body">
+        <div class="box-body">
           <div class="row">
-            <div class="form-group">
+            <div class="form-group" style="letter-spacing: 5px;padding-left: 20px">
               <label>Total:</label>
               <label>X</label>
             </div>
@@ -201,16 +221,16 @@
     <div class="row">
       <!--Buttons for control-->
       <div class="col-12 col-sm-12 col-md-6 col-lg-6" style="child-align: left">
-        <select class="selectpicker">
-          <option>Mustard</option>
-          <option>Ketchup</option>
-          <option>Relish</option>
-        </select>
-        <select class="selectpicker" data-live-search="true">
-          <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
-          <option data-tokens="mustard">Burger, Shake and a Smile</option>
-          <option data-tokens="frosting">Sugar, Spice and all things nice</option>
-        </select>
+        <!--<select class="selectpicker">-->
+          <!--<option>Mustard</option>-->
+          <!--<option>Ketchup</option>-->
+          <!--<option>Relish</option>-->
+        <!--</select>-->
+        <!--<select class="selectpicker" data-live-search="true">-->
+          <!--<option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>-->
+          <!--<option data-tokens="mustard">Burger, Shake and a Smile</option>-->
+          <!--<option data-tokens="frosting">Sugar, Spice and all things nice</option>-->
+        <!--</select>-->
       </div>
       <div class="col-12 col-sm-12 col-md-12 col-lg-6" style="child-align: right">
         <div class="btn-group" role="group" aria-label="Basic example">
