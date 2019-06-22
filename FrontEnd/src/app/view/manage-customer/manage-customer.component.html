@@ -75,21 +75,21 @@
                   <td><label for="idn" style="text-align: left">ID:</label>&nbsp;</td>
                   <td>
                     <!--<div id="idn" style="text-align: left">{{scustomer.id}}</div>-->
-                    <input type="text" id="idn" style="text-align: left;width: 300px" class="form-control" placeholder="Customer Id" [value]="sCustomer?.id" disabled>
+                    <input type="text" id="idn" style="text-align: left;width: 350px" class="form-control" placeholder="Customer Id" [value]="sCustomer?.id" disabled>
                   </td>
                 </tr>
                 <tr>
                   <td><label for="name" style="text-align: left">Name:</label>&nbsp;</td>
                   <td>
                     <!--<div id="name" style="text-align: left">{{scustomer.name}}</div>-->
-                    <input type="text" id="name" style="text-align: left" class="form-control" placeholder="Customer Name" [value]="sCustomer?.name" disabled>
+                    <input type="text" id="name" style="text-align: left;width: 350px" class="form-control" placeholder="Customer Name" [value]="sCustomer?.name" disabled>
                   </td>
                 </tr>
                 <tr>
                   <td><label for="address" style="text-align: left">Address:</label>&nbsp;</td>
                   <td>
                     <!--<div id="address" style="text-align: left">{{scustomer.address}}</div>-->
-                    <input type="text" id="address" style="text-align: left" class="form-control" placeholder="Customer Address" [value]="sCustomer?.address" disabled>
+                    <input type="text" id="address" style="text-align: left;width: 350px" class="form-control" placeholder="Customer Address" [value]="sCustomer?.address" disabled>
                   </td>
                 </tr>
               </table>
@@ -146,7 +146,7 @@
           <h4 class="modal-title">Create Customer</h4>
         </div>
         <div class="modal-body">
-          <form (ngSubmit)="save()" #frmCustomer="ngForm" class="modal-content">
+          <form (ngSubmit)="saveCustomer()" #frmCustomer="ngForm" class="modal-content">
             <div class="form-group row">
               <label for="cidedit1"
                      class="col-3 col-lg-2 col-form-label text-right">ID</label>

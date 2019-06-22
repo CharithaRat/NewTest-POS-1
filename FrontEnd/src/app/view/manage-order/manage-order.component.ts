@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Order} from '../../dto/order';
 import {OrderService} from '../../service/order.service';
-import {Customer} from "../../dto/customer";
-import {Item} from "../../dto/item";
-import {CustomerService} from "../../service/customer.service";
-import {ItemService} from "../../service/item.service";
+import {Customer} from '../../dto/customer';
+import {Item} from '../../dto/item';
+import {CustomerService} from '../../service/customer.service';
+import {ItemService} from '../../service/item.service';
 
 @Component({
   selector: 'app-manage-order',

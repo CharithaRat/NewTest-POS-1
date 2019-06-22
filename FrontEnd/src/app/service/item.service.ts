@@ -15,4 +15,12 @@ export class ItemService {
   getAllItems(): Observable<Item[]> {
     return this.http.get<Item[]>('http://localhost:8080/pos/items');
   }
+
+  getSelectedItem(id: string): Observable<Item> {
+    return this.http.get<Item>('http://localhost:8080/pos/items?Code=' + id);
+  }
+
+  deleteItem(id: string): Observable<boolean> {
+    return this.http.delete<boolean>('http://localhost:8080/pos/items?Code=' + id);
+  }
 }

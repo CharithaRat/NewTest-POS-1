@@ -1,0 +1,12 @@
+tbody tr:hover{
+  cursor: pointer;
+  background: #00caff;
+}
+/*Pseudo element apply for ng class => use with ":"*/
+.ng-invalid:not(form){
+  border-left: 5px solid red;
+}
+
+.ng-valid:not(form){
+  border-left: 5px solid green;
+}
